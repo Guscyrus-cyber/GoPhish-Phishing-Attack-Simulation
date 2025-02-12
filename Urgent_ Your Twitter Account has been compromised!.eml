@@ -1,0 +1,110 @@
+Delivered-To: cyrusmirzaei0@gmail.com
+Received: by 2002:a17:906:4807:b0:ab7:d942:4b58 with SMTP id w7csp68477ejq;
+        Wed, 12 Feb 2025 10:13:46 -0800 (PST)
+X-Received: by 2002:a05:6214:240f:b0:6e4:5f2b:9f15 with SMTP id 6a1803df08f44-6e65c3432ddmr3908436d6.14.1739384026047;
+        Wed, 12 Feb 2025 10:13:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1739384026; cv=none;
+        d=google.com; s=arc-20240605;
+        b=fe0un09hzdlbQ+1KaZpwO7xmJTZAL2pD849LuQb6GhmlSNLN4JUar3xyElDC2TVC0j
+         I2Dpox2dOuLZpW8MySCgNbcu9KkgGZ80LHWke5mkulAjBMMOHVQOvaoB94p+bxgSz+fm
+         vG8rbdeaRakC2rXH1MOlATQDd3EAThbpW1X8iA4W0ELUErO63YqgeAAWzBp5mPQ5vyKL
+         dHQQL/1GmFUEJ12ORs+vevkf8utP9l+fXCVWY/uuJgMT13H8VVhwOWrKFAk6PlLlfiev
+         T2HX3BxSYyB3WZWJbAmbvExeDKtN13Agiya8FaV4cLmcyEsHhcgSjF3A/ZMJAMulT47/
+         gFzA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:to:subject:message-id:date:mime-version
+         :from:dkim-signature;
+        bh=4V1EdM4xrr0sxdLsJIaIOSGGuVMnHcUxDK+znkmhOqk=;
+        fh=9RohxEzJh/+NNHQP3mKbWc16s/UnJeaPZJk/pssWDjo=;
+        b=bv2pP0Nzthp4IDF3xjK1OtMnnGlLe8SWNws/V1t/0ARFW3P24NAbwxFAgdgLgIjV+R
+         cIyWykQBjmmeLgjQdSfSZCijC+zUxF/Gp+8Y+KMgcqX2fVtlXEOwZP9Sj64loIU3ZyCZ
+         8jm5IyA4DIz51XRjgZrIJB41zQjUj78H/ChDoJEgpwvg985e7jRqQdyzLr+Bp4g4KCwn
+         xKCmeNXwhCupsBxOnEyzUYzCBjDV2mqRTR3EabirvEENOJMqWWMJBclCz6hXzXlUvYVY
+         rJwxzniBBbKWwhiF5OVuG9DoxaitnEUBe8UzxDtzhqVit3VefASoW3xwxjB0u4iA5ybc
+         k15A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=eMWtt9UC;
+       spf=pass (google.com: domain of abertkooshano@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=abertkooshano@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <abertkooshano@gmail.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id 6a1803df08f44-6e473af3c65sor14359766d6.2.2025.02.12.10.13.45
+        for <cyrusmirzaei0@gmail.com>
+        (Google Transport Security);
+        Wed, 12 Feb 2025 10:13:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of abertkooshano@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=eMWtt9UC;
+       spf=pass (google.com: domain of abertkooshano@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=abertkooshano@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1739384025; x=1739988825; dara=google.com;
+        h=content-transfer-encoding:to:subject:message-id:date:mime-version
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=4V1EdM4xrr0sxdLsJIaIOSGGuVMnHcUxDK+znkmhOqk=;
+        b=eMWtt9UCbzdCA1oLv8nhMuB9XSapD4PVXiN4KxK5nt34X+acxDGplE91bKfJbisiLQ
+         fqJI5g/XZfqe0pHahoT1wBP7juqKocA/d3EnYP7ca7AJGOMbTJTEMQVoVOAucaOJ3W1H
+         2nUdBuZl367bt39mUSee4OgePmH6T9IMGErwYh+hAOaDfPmEzuDm1ha8s8qQq06q5TAd
+         fr71uwm1HRdUWtjCHyF3Nw/R4u7PVjCNHCa5iMwugNilX4fH5zXjpu5KKtod3Qo4L2ez
+         gDGyZKYu1Ejd83mD6O7kl9svYmEw6dPkVX0KLmW66In6M3rkeoiemXBtau0CJLZJ2Z6h
+         /+Mw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739384025; x=1739988825;
+        h=content-transfer-encoding:to:subject:message-id:date:mime-version
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=4V1EdM4xrr0sxdLsJIaIOSGGuVMnHcUxDK+znkmhOqk=;
+        b=KwKdC+bzRkUTm+vHLS9+krr8E37VH33w782K898ZR7IuilAi/tZcgwgnPbH+AIYSjs
+         EHWM8cr6Jka2s1AbV7PSr36UuRxD18wH+/nZz0gYyTTM0RB0jB0CTSKpEL6xaW3ND4vo
+         f614BnxUqg78+rRq5/SYX71vqJpZsWeLpPxcf/NxHgyYpOrqKjotWWPBVZYgJo41rnYM
+         nARtOE+raXk+eOvOoWahD8JDiUVjV3N//o4Q3DeIRP8qugtqo77nky6CxUayKD9Pv/Uo
+         4pPnL2wDaw5ZOkTnp0p9L1k2MbRg3YhqgxbBWRueeQP4PICqiVvs4D4l4b+AYw3ROofY
+         D8LQ==
+X-Gm-Message-State: AOJu0YyvTe3CuwdcAFXIGTQRATHDNYQdkLG1bFnDgEI0WyfK2PhUBZGx
+	/mmuELC28CW50nDE3m1vs1SW11C/PaggPVnZFNaIlY3R92MKjqhD3iLYl2f0D80=
+X-Gm-Gg: ASbGncsjPZygJCVYAQQ6yilseySdw38oxaLfjKK6OHmIFt6UPNFyog0W9aA7XVF1Q0S
+	gRqkxNg0+IBaB5s3+P97qsu3JZnix1/lkZeWojBKJScJYm2BzZuJGuoTRbYcKj4ZaUskrE+pKap
+	/mb2427A7ljggEv5EsTlOsw23cJhlgVkyYDexVtrqyvGwpnci16iba3WfrQScveSNOT28jNnpI9
+	5LDbjZIsAAcP6NHwmUvGu115EaC61e0wx/yuonALo99pgc7tWnmsYcnNptzsIWKuBYozCRV7RHR
+	NaGeM4bmBO+wcOPlZxyx4NUzBZgnnXFh//rjS03tPDTe1sNPMZCsRLg75A==
+X-Google-Smtp-Source: AGHT+IFq/q42kDLuP7M1K2dAa5mw3t0fP4o6TLakbPKkqNZHVBg0Tq6uKz5Sq0lOSLR9tezTqkq0Sg==
+X-Received: by 2002:a05:6214:b6d:b0:6e2:4da9:4e2d with SMTP id 6a1803df08f44-6e65c31ff3fmr6188136d6.9.1739384025344;
+        Wed, 12 Feb 2025 10:13:45 -0800 (PST)
+Return-Path: <abertkooshano@gmail.com>
+Received: from user (pool-74-96-227-167.washdc.fios.verizon.net. [74.96.227.167])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-6e44e113e99sm65875626d6.98.2025.02.12.10.13.44
+        for <cyrusmirzaei0@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 12 Feb 2025 10:13:45 -0800 (PST)
+From: abertkooshano@gmail.com
+X-Google-Original-From: support@Twitter.com
+Mime-Version: 1.0
+Date: Wed, 12 Feb 2025 13:13:45 -0500
+X-Mailer: gophish
+Message-Id: <1739384024936646245.2652837.3184158597449640133@user>
+Subject: Urgent: Your Twitter Account has been compromised!
+To: "Cyrus Mirzaei" <cyrusmirzaei0@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Dear Valued Twitter Customer,
+
+We have detected suspicious activity on your Twitter account that suggests =
+unauthorized access. To protect your account, we have temporarily locked it=
+ until you confirm your identity.
+
+Immediate Action Required:
+Please verify your account and reset your password by clicking the secure l=
+ink below:
+
+=F0=9F=91=89 [Secure Your Account Now](http://127.0.0.1:80)
+
+If you do not take action within the next 24 hours, your Twitter account ma=
+y be permanently restricted.
+
+Thank you for your prompt attention to this security matter.
+
+Sincerely,
+Twitter Security Team
